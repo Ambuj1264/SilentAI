@@ -1,0 +1,13 @@
+{
+  "name": "silentai",
+  "version": "1.0.0",
+  "description": "Private ChatGPT window - hidden from screen sharing and recording",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^30.0.0",
+    "uiohook-napi": "^1.5.5"
+  }
+}
