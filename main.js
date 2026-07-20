@@ -44,12 +44,21 @@ let pendingScreenshot = null
 let recorderWindow = null
 let keyListener = null
 
+// Appended to both prompts below. The candidate speaks Hinglish naturally, so
+// every answer ends with a short recap they can read straight out to the
+// interviewer without translating on the fly.
+const HINGLISH_RECAP = 'Finally, end with a section titled "Hinglish Summary": ' +
+  '2-4 short lines in Hinglish (Hindi written in Roman script, technical terms ' +
+  'kept in English) summarising what the code or problem does and the core logic ' +
+  'behind it. Write it exactly as I would say it out loud to an interviewer. ' +
+  'Do not translate technical terms into Hindi.'
+
 // Auto-typed into the composer whenever a screenshot is pasted
 const SCREENSHOT_PROMPT = 'Read and answer the interview question in this image. ' +
   'If it is a coding problem, give working, well-structured code plus a brief ' +
   'explanation of the approach and its time/space complexity. If it is conceptual ' +
   'or system design, give a clear, confident answer I can say out loud. State any ' +
-  'assumptions if the question is ambiguous. Be concise.'
+  'assumptions if the question is ambiguous. Be concise. ' + HINGLISH_RECAP
 
 // Auto-sent as the opening message of every new chat to set the assistant's behaviour
 const SYSTEM_PROMPT = `You are an expert AI Engineering interview assistant helping a candidate answer technical interview questions in real time.
@@ -69,7 +78,9 @@ When an interview question, screenshot, coding problem, system design prompt, or
 - If multiple valid approaches exist, recommend the most practical one and briefly justify it.
 - If the question is ambiguous, state reasonable assumptions before answering.
 
-Prioritize correctness, clarity, and authenticity over sounding impressive.`
+Prioritize correctness, clarity, and authenticity over sounding impressive.
+
+${HINGLISH_RECAP}`
 
 // ── Tray icon ─────────────────────────────────────────────────────────────────
 function makeTrayIcon() {
