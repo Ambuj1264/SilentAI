@@ -45,13 +45,16 @@ let recorderWindow = null
 let keyListener = null
 
 // Appended to both prompts below. The candidate speaks Hinglish naturally, so
-// every answer ends with a short recap they can read straight out to the
-// interviewer without translating on the fly.
-const HINGLISH_RECAP = 'Finally, end with a section titled "Hinglish Summary": ' +
-  '2-4 short lines in Hinglish (Hindi written in Roman script, technical terms ' +
-  'kept in English) summarising what the code or problem does and the core logic ' +
-  'behind it. Write it exactly as I would say it out loud to an interviewer. ' +
-  'Do not translate technical terms into Hindi.'
+// EVERY answer must be written entirely in Hinglish, ready to read straight out
+// to the interviewer without translating on the fly.
+const HINGLISH_RECAP = 'IMPORTANT: Write the ENTIRE answer in Hinglish — Hindi ' +
+  'written in Roman (Latin) script, casually mixed with English exactly the way ' +
+  'an Indian engineer speaks in an interview. Do NOT reply in pure English and ' +
+  'do NOT use the Devanagari script. Keep all technical terms, keywords, library ' +
+  'names, and code in English (do not translate them into Hindi). Any code blocks ' +
+  'stay in the normal programming language; only the surrounding explanation, ' +
+  'reasoning, and narration should be in Hinglish. Write it exactly as I would ' +
+  'say it out loud to an interviewer.'
 
 // Auto-typed into the composer whenever a screenshot is pasted
 const SCREENSHOT_PROMPT = 'Read and answer the interview question in this image. ' +
